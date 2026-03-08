@@ -1,0 +1,26 @@
+{
+  "name": "@life/sms-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for SMS send/receive via phone gateway + LifeDB",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "author": "Isaac Robinson",
+  "license": "MIT",
+  "dependencies": {
+    "@life/common": "file:../life-common",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^3.0.0"
+  }
+}
