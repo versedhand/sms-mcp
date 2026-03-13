@@ -35,7 +35,7 @@ This MCP server captures content at send time by inserting directly to DB.
 
 ```bash
 # Create venv (no symlinks for Obsidian compatibility)
-cd /mnt/d/obs/life-code/sms-mcp
+cd /home/rrobinson/projects/sms-mcp
 python3 -m venv --copies venv
 rm -rf venv/lib64 && cp -r venv/lib venv/lib64
 ./venv/bin/pip install -r requirements.txt
@@ -60,7 +60,7 @@ The server needs its own venv since paths differ:
 
 ```bash
 ssh red
-cd /srv/obs/life-code/sms-mcp  # or wherever obs is mounted
+cd /home/rrobinson/projects/sms-mcp  # or wherever obs is mounted
 python3 -m venv venv
 ./venv/bin/pip install -r requirements.txt
 ```
@@ -76,5 +76,5 @@ Then add to server's Claude Code config with server-appropriate paths.
 ## Related
 
 - `/life/infra/sms-infrastructure.md` - Full SMS architecture
-- `/life-code/lifedb/` - LifeDB MCP server
+- `/projects/lifedb/` - LifeDB MCP server
 - SMS Gateway app on phone (port 8080)
