@@ -1,6 +1,6 @@
 {
   "name": "@versedhand/sms-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for SMS send/receive via phone gateway + LifeDB",
   "type": "module",
   "main": "dist/index.js",
