@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
-import { shutdown } from '@life/common';
+import { shutdown } from '@versedhand/common';
 import { sendViaGateway } from './gateway.js';
 import {
   getConversations,

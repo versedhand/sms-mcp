@@ -1,7 +1,12 @@
-const SMS_GATEWAY_URL =
-  process.env.SMS_GATEWAY_URL || 'http://100.83.238.68:8080';
-const SMS_GATEWAY_USER = process.env.SMS_GATEWAY_USER || 'sms';
-const SMS_GATEWAY_PASS = process.env.SMS_GATEWAY_PASS || 'Lt9VJGAk';
+function getEnvOrDie(name: string): string {
+  const val = process.env[name];
+  if (!val) throw new Error(`Missing required env var: ${name}`);
+  return val;
+}
+
+const SMS_GATEWAY_URL = getEnvOrDie('SMS_GATEWAY_URL');
+const SMS_GATEWAY_USER = getEnvOrDie('SMS_GATEWAY_USER');
+const SMS_GATEWAY_PASS = getEnvOrDie('SMS_GATEWAY_PASS');
 
 export async function sendViaGateway(
   phone: string,

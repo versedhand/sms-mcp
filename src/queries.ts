@@ -1,4 +1,4 @@
-import { query, queryOne, execute } from '@life/common';
+import { query, queryOne, execute } from '@versedhand/common';
 
 export async function getConversations() {
   return query(`
