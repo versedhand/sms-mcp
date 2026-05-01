@@ -73,11 +73,17 @@ export async function getUnread(limit: number = 30) {
 }
 
 export async function markRead(phone: string) {
+  // Short codes are stored without +1 prefix (e.g. "44884" not "+144884")
+  // Strip +1 prefix if the remaining digits are 5-6 chars (short code length)
+  let normalized = phone;
+  if (phone.startsWith('+1') && phone.length <= 8) {
+    normalized = phone.slice(2);
+  }
   return execute(
     `UPDATE sms_messages
      SET read_at = NOW(), status = 'read'
      WHERE phone_number = $1 AND read_at IS NULL`,
-    [phone],
+    [normalized],
   );
 }
 
